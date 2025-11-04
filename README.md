@@ -37,10 +37,18 @@ CREATE TABLE world_layoffs.layoffs_clean LIKE world_layoffs.layoffs;
 INSERT INTO world_layoffs.layoffs_clean
 SELECT * FROM world_layoffs.layoffs_staging;
 
+4. Publish Clean Table
+Once validated, the clean dataset is published as:
+CREATE TABLE world_layoffs.layoffs_clean LIKE world_layoffs.layoffs;
+INSERT INTO world_layoffs.layoffs_clean
+SELECT * FROM world_layoffs.layoffs_staging;
+This table becomes the single source of truth for analytics.
+
 5. Generate KPIs
 SELECT YEAR(`date`) AS year, SUM(total_laid_off) AS total_laid_off
 FROM world_layoffs.layoffs_clean
 GROUP BY YEAR(`date`);
+
 
 What This Project Demonstrates
 Building a reproducible SQL pipeline
