@@ -61,3 +61,6 @@ Database: MySQL
 Language: SQL
 Techniques: Data Cleaning, Transformation, Deduplication, KPI Analytics
 Functions Used: ROW_NUMBER(), TRIM(), NULLIF(), GROUP BY
+
+Author Hussien Abdelhamid Mechatronics Engineer | Data Analytics Enthusiast
+
